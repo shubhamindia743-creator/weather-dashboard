@@ -1,0 +1,28 @@
+{
+  "name": "weather-dashboard",
+  "version": "1.0.0",
+  "description": "Ultra Advanced Weather Dashboard",
+  "private": true,
+  "scripts": {
+    "dev": "node -r dotenv/config scripts/dev.js",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && npm run build",
+    "start": "node scripts/start.js",
+    "test": "npm run test:frontend && npm run test:backend",
+    "test:frontend": "cd frontend && npm test",
+    "test:backend": "cd backend && npm test",
+    "docker:build": "docker-compose build",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down"
+  },
+  "workspaces": [
+    "frontend",
+    "backend",
+    "analytics"
+  ],
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "dotenv": "^16.3.1"
+  }
+}
